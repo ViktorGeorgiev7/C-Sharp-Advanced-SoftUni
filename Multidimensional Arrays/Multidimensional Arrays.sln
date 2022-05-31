@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.Multidimensional Arrays",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.Multidimensional Arrays", "4.Multidimensional Arrays\4.Multidimensional Arrays.csproj", "{46ECEA59-6FA4-4427-BB22-2BD8300CCB32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.Multidimensional Arrays", "5.Multidimensional Arrays\5.Multidimensional Arrays.csproj", "{1729D6FE-895A-49A9-A095-293EB3F4A0E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.Multidimensional Arrays", "5.Multidimensional Arrays\5.Multidimensional Arrays.csproj", "{1729D6FE-895A-49A9-A095-293EB3F4A0E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6.Jagged Arrays", "6.Jagged Arrays\6.Jagged Arrays.csproj", "{E960CCC7-38AF-40DB-9D83-9DC5C6F62932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.1.Jagged Arrays", "6.1.Jagged Arrays\6.1.Jagged Arrays.csproj", "{C8B1D94F-F9A3-4DE3-A944-5E4F09D710E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.Jagged Array - Pascal Triangle", "7.Jagged Array - Pascal Triangle\7.Jagged Array - Pascal Triangle.csproj", "{A5823DDA-A16B-4328-AFDD-8A7619753955}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{1729D6FE-895A-49A9-A095-293EB3F4A0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1729D6FE-895A-49A9-A095-293EB3F4A0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1729D6FE-895A-49A9-A095-293EB3F4A0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E960CCC7-38AF-40DB-9D83-9DC5C6F62932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E960CCC7-38AF-40DB-9D83-9DC5C6F62932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E960CCC7-38AF-40DB-9D83-9DC5C6F62932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E960CCC7-38AF-40DB-9D83-9DC5C6F62932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B1D94F-F9A3-4DE3-A944-5E4F09D710E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B1D94F-F9A3-4DE3-A944-5E4F09D710E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B1D94F-F9A3-4DE3-A944-5E4F09D710E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B1D94F-F9A3-4DE3-A944-5E4F09D710E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5823DDA-A16B-4328-AFDD-8A7619753955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5823DDA-A16B-4328-AFDD-8A7619753955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5823DDA-A16B-4328-AFDD-8A7619753955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5823DDA-A16B-4328-AFDD-8A7619753955}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
