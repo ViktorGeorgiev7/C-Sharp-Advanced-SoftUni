@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Multidimensional_Arrays_Exercise", "1.Multidimensional_Arrays_Exercise\1.Multidimensional_Arrays_Exercise.csproj", "{48A79E77-6909-4E4B-9D45-CDA0BF4363F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.Multidimensional_Arrays_Exercise", "2.Multidimensional_Arrays_Exercise\2.Multidimensional_Arrays_Exercise.csproj", "{54A02716-E437-455E-9F13-C4F1AC032093}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.Multidimensional_Array_Exercise", "3.Multidimensional_Array_Exercise\3.Multidimensional_Array_Exercise.csproj", "{D2BE671C-A4AA-4E02-8902-9B1E3392D21F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.Multidimensional_Arrays_Exercise", "4.Multidimensional_Arrays_Exercise\4.Multidimensional_Arrays_Exercise.csproj", "{77B5FD10-ADA7-4EB7-9A1A-32F56D566C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.Multidimensional_Arrays_Exercise", "5.Multidimensional_Arrays_Exercise\5.Multidimensional_Arrays_Exercise.csproj", "{62A87FD9-7260-4AF4-99D8-BA1EE5B92216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.Multidimensional_Arrays_Exercise", "6.Multidimensional_Arrays_Exercise\6.Multidimensional_Arrays_Exercise.csproj", "{54804D78-1D36-40F2-B5FE-39032C630453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48A79E77-6909-4E4B-9D45-CDA0BF4363F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A79E77-6909-4E4B-9D45-CDA0BF4363F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A79E77-6909-4E4B-9D45-CDA0BF4363F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A79E77-6909-4E4B-9D45-CDA0BF4363F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A02716-E437-455E-9F13-C4F1AC032093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A02716-E437-455E-9F13-C4F1AC032093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A02716-E437-455E-9F13-C4F1AC032093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A02716-E437-455E-9F13-C4F1AC032093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2BE671C-A4AA-4E02-8902-9B1E3392D21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BE671C-A4AA-4E02-8902-9B1E3392D21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BE671C-A4AA-4E02-8902-9B1E3392D21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BE671C-A4AA-4E02-8902-9B1E3392D21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B5FD10-ADA7-4EB7-9A1A-32F56D566C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B5FD10-ADA7-4EB7-9A1A-32F56D566C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B5FD10-ADA7-4EB7-9A1A-32F56D566C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B5FD10-ADA7-4EB7-9A1A-32F56D566C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A87FD9-7260-4AF4-99D8-BA1EE5B92216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A87FD9-7260-4AF4-99D8-BA1EE5B92216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A87FD9-7260-4AF4-99D8-BA1EE5B92216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A87FD9-7260-4AF4-99D8-BA1EE5B92216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54804D78-1D36-40F2-B5FE-39032C630453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54804D78-1D36-40F2-B5FE-39032C630453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54804D78-1D36-40F2-B5FE-39032C630453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54804D78-1D36-40F2-B5FE-39032C630453}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84D1B976-AFCE-4E4A-9E2F-E9BC7ECA31A7}
+	EndGlobalSection
+EndGlobal
