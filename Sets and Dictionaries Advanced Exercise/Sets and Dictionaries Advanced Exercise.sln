@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Sets and Dictionaries Advanced Exercise", "1.Sets and Dictionaries Advanced Exercise\1.Sets and Dictionaries Advanced Exercise.csproj", "{59CCAB4D-9029-4C8C-8541-E2FC778B04F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.Sets and Dictionaries Advanced Exercise", "2.Sets and Dictionaries Advanced Exercise\2.Sets and Dictionaries Advanced Exercise.csproj", "{F390AC76-24BE-4344-B203-20B8A214EE53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.Sets and Dictionaries Advanced Exercise", "3.Sets and Dictionaries Advanced Exercise\3.Sets and Dictionaries Advanced Exercise.csproj", "{8DB701D3-B6AB-418F-96C6-23C34376EF5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4.Sets and Dictionaries Advanced Exercise", "4.Sets and Dictionaries Advanced Exercise\4.Sets and Dictionaries Advanced Exercise.csproj", "{1C746D6A-CBEB-4F44-9967-A2562C98481E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.Sets and Dictionaries Advanced Exercise", "5.Sets and Dictionaries Advanced Exercise\5.Sets and Dictionaries Advanced Exercise.csproj", "{522A61F5-EE30-4072-9247-FB9D7A28C064}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6.Sets and Dictionaries Advanced Exercise", "6.Sets and Dictionaries Advanced Exercise\6.Sets and Dictionaries Advanced Exercise.csproj", "{8250933D-2BD6-4EE6-B68D-A4FDD5C8860B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7.Sets and Dictionaries Advanced Exercise", "7.Sets and Dictionaries Advanced Exercise\7.Sets and Dictionaries Advanced Exercise.csproj", "{5186267B-26E8-49DE-B809-5B90F256BE1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.Sets and Dictionaries Advanced Exercise", "8.Sets and Dictionaries Advanced Exercise\8.Sets and Dictionaries Advanced Exercise.csproj", "{D6C0AF6A-87ED-4EDF-9CAC-17DEC5DDFD95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59CCAB4D-9029-4C8C-8541-E2FC778B04F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CCAB4D-9029-4C8C-8541-E2FC778B04F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CCAB4D-9029-4C8C-8541-E2FC778B04F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CCAB4D-9029-4C8C-8541-E2FC778B04F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F390AC76-24BE-4344-B203-20B8A214EE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F390AC76-24BE-4344-B203-20B8A214EE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F390AC76-24BE-4344-B203-20B8A214EE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F390AC76-24BE-4344-B203-20B8A214EE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB701D3-B6AB-418F-96C6-23C34376EF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB701D3-B6AB-418F-96C6-23C34376EF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB701D3-B6AB-418F-96C6-23C34376EF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB701D3-B6AB-418F-96C6-23C34376EF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C746D6A-CBEB-4F44-9967-A2562C98481E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C746D6A-CBEB-4F44-9967-A2562C98481E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C746D6A-CBEB-4F44-9967-A2562C98481E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C746D6A-CBEB-4F44-9967-A2562C98481E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522A61F5-EE30-4072-9247-FB9D7A28C064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522A61F5-EE30-4072-9247-FB9D7A28C064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522A61F5-EE30-4072-9247-FB9D7A28C064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522A61F5-EE30-4072-9247-FB9D7A28C064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8250933D-2BD6-4EE6-B68D-A4FDD5C8860B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8250933D-2BD6-4EE6-B68D-A4FDD5C8860B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8250933D-2BD6-4EE6-B68D-A4FDD5C8860B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8250933D-2BD6-4EE6-B68D-A4FDD5C8860B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5186267B-26E8-49DE-B809-5B90F256BE1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5186267B-26E8-49DE-B809-5B90F256BE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5186267B-26E8-49DE-B809-5B90F256BE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5186267B-26E8-49DE-B809-5B90F256BE1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C0AF6A-87ED-4EDF-9CAC-17DEC5DDFD95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C0AF6A-87ED-4EDF-9CAC-17DEC5DDFD95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C0AF6A-87ED-4EDF-9CAC-17DEC5DDFD95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C0AF6A-87ED-4EDF-9CAC-17DEC5DDFD95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ECFD055-748C-4CCD-A9FE-72E65DD4D0F3}
+	EndGlobalSection
+EndGlobal
