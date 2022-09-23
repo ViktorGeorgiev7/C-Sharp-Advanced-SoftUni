@@ -35,8 +35,6 @@ namespace qadebug
                         collectedcoals++;
                     }
                 }
-            }
-            int currRow = minerRow;
             int currCol = minerCol;
 
 
