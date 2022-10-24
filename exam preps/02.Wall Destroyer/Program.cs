@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Numerics;
-using System.Security.Claims;
-using System.Threading;
 
 namespace _02.Wall_Destroyer
 {
@@ -13,7 +9,14 @@ namespace _02.Wall_Destroyer
 
             int n = int.Parse(Console.ReadLine()!);
             char[,] matrix = new char[n,n];
-
+            int moleRow = 0;
+            int moleCol = 0;
+            int firstPortalRow = 0;
+            int firstPortalCol = 0;
+            int secondPortalRow = 0;
+            int secondPortalCol = 0;
+            int points = 0;
+            int rr = 0;
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
                 string text = Console.ReadLine();
@@ -21,185 +24,108 @@ namespace _02.Wall_Destroyer
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
                     matrix[row, col] = line![col];
-                }
-            }
-            bool hitCable = false;
-                int holes = 0;
-                int rodeHit = 0;
-            string move = Console.ReadLine();
-            while (true)
-            {
-                if (hitCable)
-                {
-                    Console.WriteLine($"Vanko got electrocuted, but he managed to make {Counter(matrix)} hole(s).");
-                    break;
-                }
-                if (move == "End")
-                {
-                    break;
-                }
-
-                bool IsFound = false;
-                for (int row = 0; row < matrix.GetLength(0); row++)
-                {
-                    for (int col = 0; col < matrix.GetLength(1); col++)
+                    if (matrix[row,col] == 'M')
                     {
-                        if (matrix[row,col] == 'V')
-                        {
-                            if (IsFound)
-                            {
-                                break;
-                            }
-                            IsFound = true;
-                            switch (move)
-                            {
-                                case "up":
-                                    if (row == 0)
-                                    {
-                                        
-                                    }
-                                    else
-                                    {
-                                        if (matrix[row-1,col] == 'R')
-                                        {
-                                            Console.WriteLine("Vanko hit a rod!");
-                                            rodeHit++;
-                                        }
-                                        else if (matrix[row - 1, col] == 'C')
-                                        {
-                                            matrix[row - 1, col] = 'E';
-                                            holes++;
-                                            matrix[row, col] = '*';
-                                            hitCable = true;
-                                        }
-                                        else if (matrix[row - 1, col] == '-')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row - 1, col] = 'V';
-                                            holes++;
-                                        }
-                                        else if (matrix[row -1, col] == '*')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row - 1, col] = 'V';
-                                            Console.WriteLine($"The wall is already destroyed at position [{row-1}, {col}]!");//can u step on the wall?
-                                        }
-                                    }
-                                    break;
-                                case "down":
-                                    if (row == n-1)
-                                    {
+                        moleRow = row;
+                        moleCol = col;
+                    }
 
-                                    }
-                                    else
-                                    {
-                                        if (matrix[row + 1, col] == 'R')
-                                        {
-                                            Console.WriteLine("Vanko hit a rod!");
-                                            rodeHit++;
-                                        }
-                                        else if (matrix[row +1, col] == 'C')
-                                        {
-                                            matrix[row +1, col] = 'E';
-                                            holes++;
-                                            matrix[row, col] = '*';
-                                            hitCable = true;
-                                        }
-                                        else if (matrix[row +1, col] == '-')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row +1, col] = 'V';
-                                            holes++;
-                                        }
-                                        else if (matrix[row +1, col] == '*')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row +1, col] = 'V'; 
-                                            Console.WriteLine($"The wall is already destroyed at position [{row+1}, {col}]!");//can u step on the wall?
-                                        }
-                                    }
-                                    break;
-                                case "left":
-                                    if (col == 0)
-                                    {
-
-                                    }
-                                    else
-                                    {
-                                        if (matrix[row , col - 1] == 'R')
-                                        {
-                                            rodeHit++; Console.WriteLine("Vanko hit a rod!");
-                                        }
-                                        else if (matrix[row , col-1] == 'C')
-                                        {
-                                            matrix[row, col-1] = 'E';
-                                            holes++;
-                                            matrix[row, col] = '*';
-                                            hitCable = true;
-                                        }
-                                        else if (matrix[row, col - 1] == '-')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row, col - 1] = 'V';
-                                            holes++;
-                                        }
-                                        else if (matrix[row, col-1] == '*')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row, col-1] = 'V'; 
-                                            Console.WriteLine($"The wall is already destroyed at position [{row}, {col-1}]!");//can u step on the wall?
-                                        }
-                                    }
-                                    break;
-                                case "right":
-                                    if (col == n-1)
-                                    {
-
-                                    }
-                                    else
-                                    {
-                                        if (matrix[row, col+1] == 'R')
-                                        {
-                                            Console.WriteLine("Vanko hit a rod!"); rodeHit++;
-                                        }
-                                        else if (matrix[row, col+1] == 'C')
-                                        {
-                                            matrix[row, col+1] = 'E';
-                                            holes++;
-                                            matrix[row, col] = '*';
-                                            hitCable = true;
-                                        }
-                                        else if (matrix[row , col+1] == '-')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row, col+1] = 'V';
-                                            holes++;
-                                        }
-                                        else if (matrix[row, col+1] == '*')
-                                        {
-                                            matrix[row, col] = '*';
-                                            matrix[row, col+1] = 'V'; 
-                                            Console.WriteLine($"The wall is already destroyed at position [{row}, {col+1}]!");//can u step on the wall?
-                                        }
-                                    }
-                                    break;
-                            }
-                        }
+                    if (matrix[row,col] == 'S' && rr == 0)
+                    {
+                        firstPortalCol = col;
+                        firstPortalRow = row;
+                        rr++;
+                    }
+                    else if(matrix[row, col] == 'S' && rr == 1)
+                    {
+                        secondPortalRow = row;
+                        secondPortalCol = col;
                     }
                 }
-
-                move = Console.ReadLine();
             }
 
-            if (!hitCable)
+            string input = Console.ReadLine();
+            while (input != "End")
             {
-                Console.WriteLine($"Vanko managed to make {Counter(matrix)} hole(s) and he hit only {rodeHit} rod(s).");
-            }
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                int oldRow = moleRow;
+                int oldCol = moleCol;
+                switch (input)
                 {
-                    Console.Write(matrix[i,j]);
+                    case "up":
+                        moleRow--;
+                        break;
+                    case "down":
+                        moleRow++;
+                        break;
+                    case "left":
+                        moleCol--;
+                        break;
+                    case "right":
+                        moleCol++;
+                        break;
+                }
+
+                if (moleRow>=0 && moleRow<n && moleCol>=0 && moleCol<n)
+                {
+                    if (matrix[moleRow,moleCol] == 'S')//
+                    {//After the Mole is teleported to the other special location, he loses three (3) points and both of the special locations dissapear.
+                        points -= 3;
+                        matrix[moleRow, moleCol] = '-';
+                        if (moleRow == firstPortalRow && moleCol == firstPortalCol)
+                        {
+                            matrix[secondPortalRow, secondPortalCol] = 'M';
+                            moleRow = secondPortalRow;
+                            moleCol = secondPortalCol;
+                        }
+                        else if(moleRow == secondPortalRow && moleCol == secondPortalCol)
+                        {
+                            matrix[firstPortalRow, firstPortalCol] = 'M';
+                            moleRow = firstPortalRow;
+                            moleCol = firstPortalCol;
+                        }
+                    }
+                    else if (matrix[moleRow,moleCol] == '-')
+                    {
+                        matrix[moleRow, moleCol] = 'M';
+                    }
+                    else if (char.IsDigit(matrix[moleRow,moleCol]))
+                    {
+                        points += matrix[moleRow, moleCol] - '0';
+                        matrix[moleRow, moleCol] = 'M';
+
+                    }
+
+                    matrix[oldRow, oldCol] = '-';
+                    if (points>=25)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    moleRow = oldRow;
+                    moleCol = oldCol;
+                    Console.WriteLine($"Don't try to escape the playing field!");
+                }
+
+                input = Console.ReadLine();
+            }
+
+            if (points >= 25)
+            {
+                Console.WriteLine("Yay! The Mole survived another game!");
+                Console.WriteLine($"The Mole managed to survive with a total of {points} points.");
+            }
+            else
+            {
+                Console.WriteLine("Too bad! The Mole lost this battle!");
+                Console.WriteLine($"The Mole lost the game with a total of {points} points.");
+            }
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write(matrix[row,col]);
                 }
 
                 Console.WriteLine();

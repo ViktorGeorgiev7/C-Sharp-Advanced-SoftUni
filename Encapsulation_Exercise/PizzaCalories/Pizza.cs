@@ -52,7 +52,7 @@ namespace PizzaCalories
 
         public void AddTopping(Topping topping)
         {
-            if (toppings.Count == 10)
+            if (toppings.Count >= 10)
             {
                 throw new ArgumentException($"Number of toppings should be in range [0..10].");  
             }

@@ -12,46 +12,62 @@ namespace ShoppingSpree
             char[] delimiters = {'=', ';', ' '};
             string[] peopleArr = Console.ReadLine().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             List<Person> people = new List<Person>();
-            for (int i = 0; i < peopleArr.Length; i++)
+            try
             {
-                if (int.Parse(peopleArr[i+1]) >= 0)
+                for (int i = 0; i < peopleArr.Length; i++)
                 {
-                    if (!(string.IsNullOrEmpty(peopleArr[i]) &&string.IsNullOrWhiteSpace(peopleArr[i])))
+                    if (int.Parse(peopleArr[i + 1]) >= 0)
                     {
-                        people.Add(new Person(peopleArr[i], int.Parse(peopleArr[i + 1])));
+                        if (!(string.IsNullOrEmpty(peopleArr[i]) && string.IsNullOrWhiteSpace(peopleArr[i])))
+                        {
+                            people.Add(new Person(peopleArr[i], int.Parse(peopleArr[i + 1])));
+                        }
+                        else
+                        {
+                            throw new ArgumentException("Name cannot be empty");
+                        }
                     }
                     else
                     {
-                        throw new ArgumentException("Name cannot be empty");
+                        throw new ArgumentException("Money cannot be negative");
                     }
+                    i++;
                 }
-                else
-                {
-                    throw new ArgumentException("Money cannot be negative");
-                }
-                i++;
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             string[] productArr = Console.ReadLine().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             List<Product> products = new List<Product>();
-            for (int i = 0; i < productArr.Length; i++)
+            try
             {
-                if (int.Parse(productArr[i + 1]) > 0)
+                for (int i = 0; i < productArr.Length; i++)
                 {
-                    if (!string.IsNullOrEmpty(productArr[i]))
+                    if (int.Parse(productArr[i + 1]) > 0)
                     {
-                        products.Add(new Product(productArr[i], int.Parse(productArr[i + 1])));
+                        if (!string.IsNullOrEmpty(productArr[i]))
+                        {
+                            products.Add(new Product(productArr[i], int.Parse(productArr[i + 1])));
+                        }
+                        else
+                        {
+                            Console.WriteLine("Name cannot be empty");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Name cannot be empty");
+                        Console.WriteLine("Money cannot be negative");
                     }
+                    i++;
                 }
-                else
-                {
-                    Console.WriteLine("Money cannot be negative");
-                }
-                i++;
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
             string input = Console.ReadLine();
             while (input != "END")
             {

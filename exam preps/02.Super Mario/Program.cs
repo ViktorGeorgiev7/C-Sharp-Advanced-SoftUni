@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Data;
 
 namespace _02.Super_Mario
@@ -10,260 +11,105 @@ namespace _02.Super_Mario
             int lives = int.Parse(Console.ReadLine()!);
 
             int rowCount = int.Parse(Console.ReadLine()!);
-
+            int currentRow = 0;
+            int currentCol = 0;
             char[][] matrix = new char[rowCount][];
 
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
                 char[] input = Console.ReadLine()?.ToCharArray();
-                matrix[row] = input;
+                matrix[row] = input;//find mario in the matrix
             }
-            //works
-            int doingRow = -1;
-            int doingCol = -1;
-            bool isDead = false;
-            bool isSaved = false;
-            string move = Console.ReadLine();
-            while (true)//80/100-error probably when trying to move outside field and dying at the same time resulting in false coordinates
+            for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                string[] placeHolders = move?.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                char direction = char.Parse(placeHolders![0]);
-                //spawn Bowser
-                matrix[int.Parse(placeHolders[1])][ int.Parse(placeHolders[2])] = 'B';
-
-                for (int row = 0; row < matrix.GetLength(0); row++)
+                for (int col = 0; col < matrix[row].Length; col++)
                 {
-                    for (int col = 0; col < matrix[row].Length; col++)
+                    if (matrix[row][col] == 'M')
                     {
-                        if (matrix[row][col] == 'M')
+                        currentRow = row;
+                        currentCol = col;
+                    }
+                }
+            }//find mario indices
+
+            bool isDead = false;
+
+            while (true)
+            {
+                string[] move = Console.ReadLine().Split(' ',StringSplitOptions.RemoveEmptyEntries);
+                matrix[int.Parse(move[1])][int.Parse(move[2])] = 'B';
+                int oldRow = currentRow;
+                int oldCol = currentCol;
+                switch (move[0])
+                {
+                    case "W":
+                        currentRow--;
+                        break;
+                    case "S":
+                        currentRow++;
+                        break;
+                    case "A":
+                        currentCol--;
+                        break;
+                    case "D":
+                        currentCol++;
+                        break;
+                }
+
+                if (currentRow >= 0 && currentRow<rowCount && currentCol>=0 && currentCol<matrix[currentRow].Length)
+                {
+                    if (matrix[currentRow][currentCol] == '-')
+                    {
+                        matrix[currentRow][currentCol] = 'M';
+                    }
+                    else if (matrix[currentRow][currentCol] == 'B')
+                    {
+                        if (lives>2)
                         {
-                            switch (direction)
-                            {
-                                case 'W':
-                                    if (row == 0)//check for going outside the field
-                                    {
-                                        lives--; 
-                                        if (lives <= 0) {
-                                            doingRow = row;
-                                            doingCol = col;
-                                            isDead = true;
-                                        }
-                                    }
-                                    else if (matrix[row-1][col] == 'B')//check for bowser fight
-                                    {
-                                        matrix[row][col] = '-';
-                                        lives -= 2;
-                                        lives--;
-                                        if (lives <= 0) {
-                                            doingRow = row - 1;
-                                            doingCol = col;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row - 1][ col] = 'M';
-
-                                    }
-                                    else if(matrix[row - 1][ col] == '-')//check for moving forward
-                                    {
-                                        matrix[row][ col] = '-';
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row - 1;
-                                            doingCol = col;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row - 1][ col] = 'M';
-                                    }
-                                    else if (matrix[row-1][col] == 'P')
-                                    {
-                                        lives--;
-                                        isSaved = true;
-                                        doingRow = row-1;
-                                        doingCol = col; matrix[row][ col] = '-';
-                                        matrix[row-1][ col] = '-';
-                                    }
-                                    break;
-                                case 'S':
-                                    if (row == rowCount-1)//check for going outside the field
-                                    {
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col;
-                                            isDead = true;
-                                        }
-                                    }
-                                    else if (matrix[row + 1][ col] == 'B')//check for bowser fight
-                                    {
-                                        matrix[row][ col] = '-';
-                                        lives -= 2;
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row + 1;
-                                            doingCol = col;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row + 1][ col] = 'M';
-
-                                    }
-                                    else if (matrix[row + 1][ col] == '-')//check for moving forward
-                                    {
-                                        matrix[row][ col] = '-';
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row + 1;
-                                            doingCol = col;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row + 1][ col] = 'M';
-                                    }
-                                    else if (matrix[row + 1][ col] == 'P')
-                                    {
-                                        lives--;
-                                        isSaved = true;
-                                        doingRow = row + 1;
-                                        doingCol = col; 
-                                        matrix[row][ col] = '-';
-                                        matrix[row+1][ col] = '-';
-                                    }
-                                    break;
-                                case 'A':
-                                    if (col == 0)//check for going outside the field
-                                    {
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col;
-                                            isDead = true;
-                                        }
-                                    }
-                                    else if (matrix[row][ col-1] == 'B')//check for bowser fight
-                                    {
-                                        matrix[row][ col] = '-';
-                                        lives -= 2;
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col-1;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row][ col-1] = 'M';
-
-                                    }
-                                    else if (matrix[row][ col-1] == '-')//check for moving forward
-                                    {
-                                        matrix[row][ col] = '-';
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col-1;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row][ col-1] = 'M';
-                                    }
-                                    else if (matrix[row][col-1] == 'P')
-                                    {
-                                        lives--;
-                                        isSaved = true;
-                                        doingRow = row;
-                                        doingCol = col-1; 
-                                        matrix[row][ col] = '-';
-                                        matrix[row][ col - 1] = '-';
-                                    }
-                                    break;
-                                case 'D':
-                                    if (col == 4)//check for going outside the field
-                                    {
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col;
-                                            isDead = true;
-                                        }
-                                    }
-                                    else if (matrix[row][ col+ 1] == 'B')//check for bowser fight
-                                    {
-                                        matrix[row][ col] = '-';
-                                        lives -= 2;
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col +1;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row][ col +1] = 'M';
-
-                                    }
-                                    else if (matrix[row][ col+1] == '-')//check for moving forward
-                                    {
-                                        matrix[row][col] = '-';
-                                        lives--;
-                                        if (lives <= 0)
-                                        {
-                                            doingRow = row;
-                                            doingCol = col +1;
-                                            isDead = true;
-                                            break;
-                                        }
-                                        matrix[row][ col +1] = 'M';
-                                    }
-                                    else if (matrix[row][ col +1] == 'P')
-                                    {
-                                        lives--;
-                                        isSaved = true;
-                                        doingRow = row;
-                                        doingCol = col +1;
-                                        matrix[row][ col] = '-';
-                                        matrix[row][ col + 1] = '-';
-                                    }
-                                    break;
-                            }
+                            lives -= 2;
+                            matrix[currentRow][currentCol] = 'M';
+                        }
+                        else
+                        {
+                            isDead = true;
                         }
                     }
+                    else if (matrix[currentRow][currentCol] == 'P')
+                    {
+                        matrix[currentRow][currentCol] = '-';
+                        matrix[oldRow][oldCol] = '-';
+                        lives--;
+                        Console.WriteLine($"Mario has successfully saved the princess! Lives left: {lives}");
+                        break;
+                    }
                 }
-                if (isSaved)
-                    {
-                        break;
-                    }
-                    if (isDead)
-                    {
-                        matrix[doingRow][ doingCol] = 'X';
-                        break;
-                    }
-                move = Console.ReadLine();
-            }
-
-            if (isSaved)
-            {
-                Console.Write($"Mario has successfully saved the princess!");
-                Console.WriteLine($" Lives left: {lives}");
-            }
-            else if(isDead)
-            {
-                Console.WriteLine($"Mario died at {doingRow};{doingCol}.");
-            }
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix[i].Length; j++)
+                else
                 {
-                    Console.Write(matrix[i][j]);
+                    currentRow = oldRow;
+                    currentCol = oldCol;
+                }
+                matrix[oldRow][oldCol] = '-';
+                lives--;
+                if (lives<=0||isDead)
+                {
+                    matrix[currentRow][currentCol] = 'X';
+                    Console.WriteLine($"Mario died at {currentRow};{currentCol}.");
+                    break;
                 }
 
+            }
+
+            PrintMatrix(matrix);
+        }
+
+        private static void PrintMatrix(char[][] matrix)
+        {
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix[row].Length; col++)
+                {
+                    Console.Write(matrix[row][col]);
+                }
                 Console.WriteLine();
             }
         }

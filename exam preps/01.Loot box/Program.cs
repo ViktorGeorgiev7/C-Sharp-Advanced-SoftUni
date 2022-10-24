@@ -13,7 +13,6 @@ namespace _01.Loot_box
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
                 .ToArray();
-             int[] secondBoxArr = Console.ReadLine()
                  .Split(' ', StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
                 .ToArray();
