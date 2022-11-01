@@ -27,7 +27,7 @@ namespace FootballTeamGenerator
             }
         }
 
-        public int AverageRating => (int)Math.Round(team.Average(x => x.Stats.Average));
+        public int AverageRating => (int)Math.Round(team.Average(x => x.Average));
 
         public void AddPlayer(Player player)=>
         team.Add(player);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FootballTeamGenerator
 {
@@ -20,9 +21,9 @@ namespace FootballTeamGenerator
                             league.Add(new Team(placeHolders[1]));
                             break;
                         case "Add":
-                            if (league.Exists(x=>x.Name == placeHolders[1]))
+                            if (league.Any(x=>x.Name == placeHolders[1]))
                             {
-                                league[league.FindIndex(x => x.Name == placeHolders[1])].AddPlayer(new Player(placeHolders[2],new Stats(int.Parse(placeHolders[3]), int.Parse(placeHolders[4]), int.Parse(placeHolders[5]), int.Parse(placeHolders[6]), int.Parse(placeHolders[7]))));//Add;Arsenal;Aaron_Ramsey;95;82;82;89;68
+                                league[league.FindIndex(x => x.Name == placeHolders[1])].AddPlayer(new Player(placeHolders[2],int.Parse(placeHolders[3]), int.Parse(placeHolders[4]), int.Parse(placeHolders[5]), int.Parse(placeHolders[6]), int.Parse(placeHolders[7])));//Add;Arsenal;Aaron_Ramsey;95;82;82;89;68
                             }
                             else
                             {
@@ -30,7 +31,7 @@ namespace FootballTeamGenerator
                             }
                             break;
                         case "Remove":
-                            if (league.Exists(x => x.Name == placeHolders[1]))
+                            if (league.Any(x => x.Name == placeHolders[1]))
                             {
                                 if (!league[league.FindIndex(x => x.Name == placeHolders[1])].RemovePlayer(placeHolders[2]))
                                 {
@@ -39,7 +40,7 @@ namespace FootballTeamGenerator
                             }
                             break;
                         case "Rating":
-                            if (league.Exists(x => x.Name == placeHolders[1]))
+                            if (league.Any(x => x.Name == placeHolders[1]))
                             {
                                 Console.WriteLine($"{placeHolders[1]} - " +league[league.FindIndex(x=>x.Name == placeHolders[1])].AverageRating);
                             }

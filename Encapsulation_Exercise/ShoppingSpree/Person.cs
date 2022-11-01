@@ -34,7 +34,7 @@ namespace ShoppingSpree
             {
                 return money;
             }
-            private set
+            set
             {
                 money = value;
             }
